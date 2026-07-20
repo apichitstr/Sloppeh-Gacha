@@ -425,15 +425,15 @@ h1 {
   letter-spacing: 0.02em;
 }
 
-.inventory-group.legendary h3 {
+.inventory-group.rarity-legendary h3 {
   color: var(--orange);
 }
 
-.inventory-group.epic h3 {
+.inventory-group.rarity-epic h3 {
   color: var(--purple);
 }
 
-.inventory-group.rare h3 {
+.inventory-group.rarity-rare h3 {
   color: var(--green);
 }
 
