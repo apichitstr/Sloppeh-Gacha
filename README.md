@@ -1,4 +1,4 @@
-# Gacha Simulator (Celestial) Web
+# Celestial edition Web
 
 Static browser version of the gacha simulator. It is ready for GitHub Pages and does not need a backend.
 
@@ -8,9 +8,9 @@ Open `index.html` in a browser.
 
 ## Deploy on GitHub Pages
 
-For the shortest public link, create the repository under the GitHub account `apichitstr` with the name:
+For the shortest project link, create the repository under the GitHub account `apichitstr` with the name:
 
-`apichitstr.github.io`
+`Sloppeh-Gacha`
 
 Then:
 
@@ -21,9 +21,9 @@ Then:
 
 The live link will be:
 
-`https://apichitstr.github.io/`
+`https://apichitstr.github.io/Sloppeh-Gacha/`
 
-If you use a normal repository name instead of the user site repository, the URL becomes:
+If you use a different repository name, the URL becomes:
 
 `https://apichitstr.github.io/<repo-name>/`
 

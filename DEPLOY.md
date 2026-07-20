@@ -4,13 +4,13 @@ This project is ready for a static GitHub Pages deployment.
 
 ## Recommended repository name
 
-For the shortest public URL, create this repository under the GitHub account `apichitstr`:
+For the project URL you asked for, create this repository under the GitHub account `apichitstr`:
 
-`apichitstr.github.io`
+`Sloppeh-Gacha`
 
 Then the published site will be:
 
-`https://apichitstr.github.io/`
+`https://apichitstr.github.io/Sloppeh-Gacha/`
 
 ## What is already prepared
 
@@ -34,7 +34,7 @@ Then the published site will be:
 Run these from `d:\GachaSimulatorWeb` after creating the GitHub repository:
 
 ```powershell
-git remote add origin https://github.com/apichitstr/apichitstr.github.io.git
+git remote set-url origin https://github.com/apichitstr/Sloppeh-Gacha.git
 git add .
 git commit -m "Initial web version"
 git push -u origin main
