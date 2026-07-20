@@ -1,0 +1,39 @@
+# Gacha Simulator (Celestial) Web
+
+Static browser version of the gacha simulator. It is ready for GitHub Pages and does not need a backend.
+
+## Local use
+
+Open `index.html` in a browser.
+
+## Deploy on GitHub Pages
+
+For the shortest public link, create the repository under the GitHub account `apichitstr` with the name:
+
+`apichitstr.github.io`
+
+Then:
+
+1. Push these files to the `main` branch.
+2. In GitHub repository settings, open **Pages**.
+3. Set the source to **GitHub Actions**.
+4. Push again and wait for the workflow to finish.
+
+The live link will be:
+
+`https://apichitstr.github.io/`
+
+If you use a normal repository name instead of the user site repository, the URL becomes:
+
+`https://apichitstr.github.io/<repo-name>/`
+
+## Features
+
+- Draw 1 / 10 / 50
+- Epic pity every 10 draws
+- Legendary pity every 150 draws
+- Inventory tracking
+- Manual top up packages
+- Currency switch THB / USD
+- I'm rich auto top-up mode
+- Local save with `localStorage`
