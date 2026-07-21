@@ -360,7 +360,7 @@ h1 {
 .actions-grid {
   margin-top: 0.75rem;
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 0.86fr)) minmax(0, 1.42fr);
   gap: 0.62rem;
   position: sticky;
   top: 8px;
@@ -782,6 +782,12 @@ h1 {
 
   .content-grid {
     grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1366px) and (min-width: 1101px) {
+  .actions-grid {
+    grid-template-columns: repeat(3, minmax(0, 0.82fr)) minmax(0, 1.54fr);
   }
 }
 
