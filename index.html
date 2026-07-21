@@ -8,7 +8,7 @@
       content="Gacha Simulator (Celestial) - a free browser version with pity, inventory, top-up, and rich mode."
     />
     <title>Celestial edition</title>
-    <link rel="stylesheet" href="./styles.css?v=4" />
+    <link rel="stylesheet" href="./styles.css?v=5" />
     <script defer src="./app.js?v=5"></script>
   </head>
   <body>
@@ -41,22 +41,35 @@
 
       <section class="panel stats-panel" aria-label="draw status">
         <div class="stat-grid">
-          <div class="stat-tile">
-            <span class="stat-label">Total draws</span>
-            <strong id="total-draws">0</strong>
+          <div class="stat-tile stat-bar">
+            <div class="stat-chip">
+              <span class="stat-chip-label">Total Draws</span>
+              <strong id="total-draws" class="stat-chip-value">0</strong>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-chip-label">Legendary</span>
+              <strong id="legendary-count" class="stat-chip-value">0</strong>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-chip-label">Epic</span>
+              <strong id="epic-count" class="stat-chip-value">0</strong>
+            </div>
+            <div class="stat-chip">
+              <span class="stat-chip-label">Rare</span>
+              <strong id="rare-count" class="stat-chip-value">0</strong>
+            </div>
           </div>
-          <div class="stat-tile">
-            <span class="stat-label">Legendary</span>
-            <strong id="legendary-count">0</strong>
+
+          <div class="stat-foot">
+            <div id="total-cost" class="cost-line">Total cost: 0 draw(s) x 160 = 0 pearl</div>
+            <div id="topup-total" class="topup-line">Top up: 0 THB</div>
+
+            <div class="last-result-row">
+              <span class="last-result-label">Last result:</span>
+              <span id="last-result" class="last-result-value">-</span>
+            </div>
           </div>
-          <div class="stat-tile">
-            <span class="stat-label">Epic</span>
-            <strong id="epic-count">0</strong>
-          </div>
-          <div class="stat-tile">
-            <span class="stat-label">Rare</span>
-            <strong id="rare-count">0</strong>
-          </div>
+
           <div class="stat-tile stat-wide pity-stack">
             <div id="epic-pity" class="pity-line pity-epic">Epic pity: 0/10 (in 10 draw)</div>
             <div id="legendary-pity" class="pity-line pity-legendary">Legendary pity: 0/150 (in 150 draw)</div>
@@ -68,16 +81,6 @@
               <div id="bliss-note" class="bliss-note">After 131 total draws, Harmonic Core gives +20%. At 100%, the next Legendary becomes Starwoven Dreams.</div>
             </div>
           </div>
-        </div>
-
-        <div class="status-lines">
-          <div id="total-cost" class="cost-line">Total cost: 0 draw(s) x 160 = 0 pearl</div>
-          <div id="topup-total" class="topup-line">Top up: 0 THB</div>
-        </div>
-
-        <div class="last-result-row">
-          <span class="last-result-label">Last result:</span>
-          <span id="last-result" class="last-result-value">-</span>
         </div>
       </section>
 
