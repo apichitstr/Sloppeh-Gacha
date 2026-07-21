@@ -10,6 +10,7 @@ const THB_PER_USD = 35;
 const STORAGE_KEY = "gacha-simulator-celestial-web-v1";
 const ANALYTICS_ENDPOINT = "https://script.google.com/macros/s/AKfycbyu41ffdc5Bvq5QOzYycKAMal4ekCUIK5SVR41oERQvUNL_lD6jGa0G52CqOYnqgVLh/exec";
 const ANALYTICS_SESSION_KEY = "gacha-simulator-session-id";
+const ANALYTICS_TIMEZONE = "Asia/Bangkok";
 
 const TOPUP_PACKAGES = [
   { baht: 35, pearl: 60 },
@@ -143,13 +144,30 @@ function getOrCreateSessionId() {
   }
 }
 
+function formatEventTimestamp(date = new Date()) {
+  const parts = new Intl.DateTimeFormat("sv-SE", {
+    timeZone: ANALYTICS_TIMEZONE,
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+    hour: "2-digit",
+    minute: "2-digit",
+    second: "2-digit",
+    hourCycle: "h23",
+  }).formatToParts(date);
+
+  const value = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${value.year}-${value.month}-${value.day} ${value.hour}:${value.minute}:${value.second} (${ANALYTICS_TIMEZONE})`;
+}
+
 function sendAnalyticsEvent(eventName, details = {}) {
   if (!ANALYTICS_ENDPOINT) {
     return;
   }
 
   const payload = {
-    ts: new Date().toISOString(),
+    ts: formatEventTimestamp(),
+    tsUtc: new Date().toISOString(),
     event: eventName,
     sessionId: analytics.sessionId,
     page: window.location.pathname,
