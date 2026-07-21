@@ -1,16 +1,16 @@
-# Deploy to GitHub Pages for apichitstr
+# Deploy to GitHub Pages
 
 This project is ready for a static GitHub Pages deployment.
 
 ## Recommended repository name
 
-For the project URL you asked for, create this repository under the GitHub account `apichitstr`:
+For the project URL you asked for, create this repository under your GitHub account:
 
 `Sloppeh-Gacha`
 
 Then the published site will be:
 
-`https://apichitstr.github.io/Sloppeh-Gacha/`
+`https://<your-github-username>.github.io/Sloppeh-Gacha/`
 
 ## What is already prepared
 
@@ -22,8 +22,8 @@ Then the published site will be:
 
 ## One-time publish steps
 
-1. Sign in to GitHub as `apichitstr`.
-2. Create a new repository named `apichitstr.github.io`.
+1. Sign in to GitHub with the account that will host the site.
+2. Create a new repository named `Sloppeh-Gacha`.
 3. Push this project to that repository.
 4. In the repository settings, open **Pages**.
 5. Set the source to **GitHub Actions**.
@@ -34,7 +34,7 @@ Then the published site will be:
 Run these from `d:\GachaSimulatorWeb` after creating the GitHub repository:
 
 ```powershell
-git remote set-url origin https://github.com/apichitstr/Sloppeh-Gacha.git
+git remote set-url origin https://github.com/<your-github-username>/Sloppeh-Gacha.git
 git add .
 git commit -m "Initial web version"
 git push -u origin main

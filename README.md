@@ -8,7 +8,7 @@ Open `index.html` in a browser.
 
 ## Deploy on GitHub Pages
 
-For the shortest project link, create the repository under the GitHub account `apichitstr` with the name:
+For the shortest project link, create the repository under your GitHub account with the name:
 
 `Sloppeh-Gacha`
 
@@ -21,11 +21,11 @@ Then:
 
 The live link will be:
 
-`https://apichitstr.github.io/Sloppeh-Gacha/`
+`https://<your-github-username>.github.io/Sloppeh-Gacha/`
 
 If you use a different repository name, the URL becomes:
 
-`https://apichitstr.github.io/<repo-name>/`
+`https://<your-github-username>.github.io/<repo-name>/`
 
 ## Features
 
