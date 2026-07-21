@@ -548,10 +548,6 @@ function renderTopupModalRows() {
 function openTopupModal() {
   renderTopupModalRows();
   dom.topupModal.classList.remove("hidden");
-  const firstInput = dom.packageList.querySelector('input[type="number"]');
-  if (firstInput) {
-    firstInput.focus();
-  }
 }
 
 function closeTopupModal() {
