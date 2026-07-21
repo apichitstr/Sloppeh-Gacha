@@ -675,11 +675,22 @@ h1 {
 .package-row input {
   width: 100%;
   padding: 0.5rem 0.65rem;
+  font-size: 16px;
   border-radius: 12px;
   border: 1px solid rgba(148, 163, 184, 0.22);
   background: rgba(15, 23, 42, 0.92);
   color: var(--text);
   outline: none;
+  appearance: auto;
+  -webkit-appearance: auto;
+  -moz-appearance: auto;
+}
+
+.package-row input[type="number"]::-webkit-outer-spin-button,
+.package-row input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: inner-spin-button;
+  opacity: 1;
+  margin: 0;
 }
 
 .package-row input:focus {
@@ -763,7 +774,7 @@ h1 {
   }
 
   .package-row {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr) 90px;
   }
 
   .signature {
