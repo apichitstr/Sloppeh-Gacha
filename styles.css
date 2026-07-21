@@ -658,13 +658,35 @@ h1 {
 
 .package-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 82px;
+  grid-template-columns: minmax(0, 1fr) 130px;
   align-items: center;
   gap: 0.8rem;
   padding: 0.8rem 0.9rem;
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.035);
   border: 1px solid rgba(148, 163, 184, 0.12);
+}
+
+.qty-stepper {
+  display: grid;
+  grid-template-columns: 30px 1fr 30px;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.qty-arrow {
+  height: 34px;
+  border: 1px solid rgba(148, 163, 184, 0.24);
+  border-radius: 10px;
+  background: rgba(148, 163, 184, 0.12);
+  color: var(--text);
+  font-size: 0.78rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.qty-arrow:active {
+  transform: translateY(1px);
 }
 
 .package-name {
@@ -674,7 +696,7 @@ h1 {
 
 .package-row input {
   width: 100%;
-  padding: 0.5rem 0.65rem;
+  padding: 0.45rem 0.5rem;
   font-size: 16px;
   border-radius: 12px;
   border: 1px solid rgba(148, 163, 184, 0.22);
@@ -684,6 +706,7 @@ h1 {
   appearance: auto;
   -webkit-appearance: auto;
   -moz-appearance: auto;
+  text-align: center;
 }
 
 .package-row input[type="number"]::-webkit-outer-spin-button,
@@ -774,7 +797,13 @@ h1 {
   }
 
   .package-row {
-    grid-template-columns: minmax(0, 1fr) 90px;
+    grid-template-columns: minmax(0, 1fr) 130px;
+    gap: 0.55rem;
+    padding: 0.7rem 0.72rem;
+  }
+
+  .qty-stepper {
+    grid-template-columns: 32px 1fr 32px;
   }
 
   .signature {

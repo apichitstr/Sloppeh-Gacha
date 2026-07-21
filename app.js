@@ -535,14 +535,56 @@ function renderInventory() {
 }
 
 function renderTopupModalRows() {
+  const isMobileStepperMode = window.matchMedia("(pointer: coarse), (max-width: 820px)").matches;
+  const mobileReadonlyAttr = isMobileStepperMode ? 'readonly inputmode="none"' : "";
+
   dom.packageList.innerHTML = TOPUP_PACKAGES.map(
     (pkg, index) => `
       <label class="package-row">
         <span class="package-name">${escapeHtml(formatPackageLabel(pkg))}</span>
-        <input type="number" min="0" max="99" value="0" data-package-index="${index}" />
+        <div class="qty-stepper" role="group" aria-label="Quantity controls">
+          <button
+            type="button"
+            class="qty-arrow"
+            data-step="down"
+            data-package-index="${index}"
+            aria-label="Decrease package quantity"
+          >
+            ▼
+          </button>
+          <input
+            type="number"
+            min="0"
+            max="99"
+            value="0"
+            data-package-index="${index}"
+            ${mobileReadonlyAttr}
+          />
+          <button
+            type="button"
+            class="qty-arrow"
+            data-step="up"
+            data-package-index="${index}"
+            aria-label="Increase package quantity"
+          >
+            ▲
+          </button>
+        </div>
       </label>
     `,
   ).join("");
+}
+
+function adjustPackageQty(index, direction) {
+  const input = dom.packageList.querySelector(`input[data-package-index="${index}"]`);
+  if (!input) {
+    return;
+  }
+
+  const current = Number(input.value) || 0;
+  const delta = direction === "up" ? 1 : -1;
+  const next = Math.max(0, Math.min(99, current + delta));
+  input.value = String(next);
 }
 
 function openTopupModal() {
@@ -669,6 +711,17 @@ function bindEvents() {
     state.imRich = event.target.checked;
     saveState();
     sendAnalyticsEvent("rich_toggle", { enabled: state.imRich });
+  });
+
+  dom.packageList.addEventListener("click", (event) => {
+    const arrow = event.target.closest(".qty-arrow");
+    if (!arrow) {
+      return;
+    }
+
+    const index = Number(arrow.dataset.packageIndex);
+    const direction = arrow.dataset.step;
+    adjustPackageQty(index, direction);
   });
 
   dom.topupModal.addEventListener("click", (event) => {
